@@ -3,7 +3,8 @@ import dotenv from "dotenv";
 import helmet from "helmet";
 import connectDb from "./config/dbConnect";
 import {authRoutes} from "./routes/authRoutes";
-import {errorHandler, notFound} from "./middlwares/errorHandler";
+import {errorHandler, notFound} from "./middlewares/errorHandler";
+import {workspaceRoutes} from "./routes/workspaceRoutes";
 
 //init
 dotenv.config();
@@ -18,6 +19,7 @@ app.use(helmet());
 
 //route
 app.use('/api/auth', authRoutes);
+app.use('/api/workspace', workspaceRoutes);
 
 //error middleware
 app.use(errorHandler);
