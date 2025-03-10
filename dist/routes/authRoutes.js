@@ -10,5 +10,5 @@ const authHandler_1 = __importDefault(require("../middlewares/authHandler"));
 exports.authRoutes = express_1.default.Router();
 exports.authRoutes.post("/signup", authController_1.signUp);
 exports.authRoutes.post("/login", authController_1.login);
-exports.authRoutes.get("/logout", authController_1.logout);
+exports.authRoutes.get("/logout", authHandler_1.default, authController_1.logout);
 exports.authRoutes.get("/info", authHandler_1.default, authController_1.getInfo);
